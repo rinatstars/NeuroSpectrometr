@@ -1,0 +1,27 @@
+# Конфигурация для обучения спектральной нейросети
+
+data:
+  dataset_npy: "D:/Data/neuro/dataset_labeled.npy"
+
+training:
+  batch_size: 64
+  epochs: 60
+  learning_rate: 0.001
+  reg_weight: 1
+  save_dir: "checkpoints/"
+
+model:
+  input_channels: 2
+  conv_channels: [64, 32]
+  kernel_size: [5, 3]
+  attn_heads: 4
+  dropout: 0.18492487786259007
+  num_classes: 2
+
+transform:
+  method: "minmax"
+  noise_std: 0.01
+
+loss:
+  class_weight: 1.0
+  reg_weight: 1.0
